@@ -1,0 +1,12 @@
+npm init - creates package
+
+npm install express nodemon
+
+
+edit to in package.json - "scripts": {
+    "start": "nodemon app.js"
+  },
+
+
+
+  creat a model => save data from user => save to db

@@ -6,6 +6,10 @@ const GardenSchema = mongoose.Schema({
     plant: {
         type: String,
         required: true,
+    },
+    garden: {
+        type: String,
+        required: true,
     }
 });
 

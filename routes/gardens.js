@@ -9,7 +9,7 @@ const router = express.Router();
 const Garden = require('../models/Garden');
 
 /** get all gardens 
- *  -gardens will only contain a single plant right now 
+ *  -gardens will only contain a single plant and garden name right now 
 **/
 router.get('/', async (req,res) => {
     try{
@@ -69,6 +69,7 @@ router.post('/', async (req,res) => {
     //get garden data
     const garden = new Garden({
         plant: req.body.plant,
+        garden: req.body.garden,
 
     });
 

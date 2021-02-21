@@ -26,7 +26,7 @@ router.get('/', async (req,res) => {
 });
 
 
-/** get specific posts by ID **/
+/** get specific plant by ID **/
 router.get('/:postId', async (req, res) => {
     try{
         //use model and find by ID
@@ -39,7 +39,7 @@ router.get('/:postId', async (req, res) => {
 })
 
 
-/** delete specific posts by ID **/
+/** delete specific plant by ID **/
 router.delete('/:postId', async (req, res) => {
     try{
         //use model and remove by ID targeting the _id param
@@ -50,7 +50,7 @@ router.delete('/:postId', async (req, res) => {
     }
 })
 
-/** update specific posts by ID **/
+/** update specific plant by ID **/
 router.patch('/:postId', async (req, res) => {
     try{
         //use model and update by ID targeting the _id param
@@ -63,13 +63,17 @@ router.patch('/:postId', async (req, res) => {
     }
 })
 
-/** submit garden **/
+/** submit plant **/
 router.post('/', async (req,res) => {
 
     //get garden data
     const garden = new Garden({
+
         plant: req.body.plant,
         garden: req.body.garden,
+        season: req.body.season,
+        zone: req.body.zone,
+        perFoot : req.body.perFoot,
 
     });
 

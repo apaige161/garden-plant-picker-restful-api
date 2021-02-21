@@ -10,6 +10,18 @@ const GardenSchema = mongoose.Schema({
     garden: {
         type: String,
         required: true,
+    },
+    season: {
+        type: String,
+        required: true,
+    },
+    zone: {
+        type: String,
+        required: true,
+    },
+    perFoot: {
+        type: Number,
+        required: false,
     }
 });
 

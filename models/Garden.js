@@ -21,8 +21,16 @@ const GardenSchema = mongoose.Schema({
     },
     perFoot: {
         type: Number,
-        required: false,
-    }
+        required: true,
+    },
+    xGarden: {
+        type: Number,
+        required: true,
+    },
+    yGarden: {
+        type: Number,
+        required: true,
+    },
 });
 
 //export

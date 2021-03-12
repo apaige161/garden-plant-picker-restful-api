@@ -76,6 +76,7 @@ router.post('/', async (req,res) => {
         perFoot : req.body.perFoot,
         xGarden: req.body.xGarden,
         yGarden: req.body.yGarden,
+        col: req.body.col
 
     });
 

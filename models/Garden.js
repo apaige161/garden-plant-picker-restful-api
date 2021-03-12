@@ -31,6 +31,10 @@ const GardenSchema = mongoose.Schema({
         type: Number,
         required: true,
     },
+    col: {
+        type: Number,
+        required: true,
+    }
 });
 
 //export

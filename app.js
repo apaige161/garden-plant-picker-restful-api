@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
+const bcrypt = require('bcrypt');
+
 
 //call express, execute
 const app = express();
@@ -45,12 +47,6 @@ mongoose.connect(uri, {
     useUnifiedTopology: true
 }).then(() => {
     console.log('mongodb connected...');
-});
-
-
-//Routes
-app.get('/', (req,res) => {
-    res.send('We are Home, server listening on port: ' + PORT);
 });
 
 

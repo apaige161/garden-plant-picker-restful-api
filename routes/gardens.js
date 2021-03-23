@@ -9,7 +9,7 @@ const router = express.Router();
 const Garden = require('../models/Garden');
 
 /** get all gardens 
- *  -gardens will only contain plants and garden name right now 
+ *  
 **/
 router.get('/', async (req,res) => {
     try{
@@ -88,6 +88,7 @@ router.post('/', async (req,res) => {
         res.json({message: err});
     }
 });
+
 
 //export routes
 module.exports = router;

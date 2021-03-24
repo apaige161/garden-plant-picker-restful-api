@@ -7,6 +7,11 @@ const cors = require('cors');
 const bcrypt = require('bcrypt');
 
 
+
+//import model
+const ctrlUser = require('./models/User');
+
+
 //call express, execute
 const app = express();
 const PORT = process.env.Port || 3000;
@@ -14,6 +19,8 @@ const PORT = process.env.Port || 3000;
 //Import routes
 const postsRoute = require('./routes/posts');
 const gardensRoute = require('./routes/gardens');
+const userRegistration = require('./routes/User');
+
 
 
 /****middleware*****/
@@ -21,6 +28,9 @@ const gardensRoute = require('./routes/gardens');
 //cors
 app.use(cors());
 
+/**
+ * deprecation warning from this
+ */
 //parse body into json
 app.use(bodyParser.json());
 
@@ -28,6 +38,8 @@ app.use(bodyParser.json());
 app.use('/posts', postsRoute);
 
 app.use('/gardens', gardensRoute);
+
+app.use('/register', userRegistration);
 
 
 
@@ -43,8 +55,10 @@ const uri = "mongodb+srv://alex:NwWxO76KuTLaQfEx@node-rest.wudka.mongodb.net/nod
 //connect cloud mongoose
 //second param are the options
 mongoose.connect(uri, {
+
     useNewUrlParser: true,
     useUnifiedTopology: true
+    
 }).then(() => {
     console.log('mongodb connected...');
 });
@@ -52,4 +66,4 @@ mongoose.connect(uri, {
 
 
 //listen on port 3000
-app.listen(PORT);
+app.listen(PORT, () => console.log(`Server started at port: ${PORT}`));

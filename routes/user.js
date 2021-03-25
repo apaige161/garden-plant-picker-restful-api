@@ -7,6 +7,10 @@ const express = require('express');
 const router = express.Router();
 //import model
 const User = require('../models/User');
+const { check, validationResult } = require('express-validator');
+
+const emailCheck = require('email-check') ;
+//other imports
 
 /** register user **/
 router.post('/', async (req,res) => {
@@ -17,7 +21,6 @@ router.post('/', async (req,res) => {
         fullName: req.body.fullName,
         email: req.body.email,
         password: req.body.password,
-
     });
 
     //save to database

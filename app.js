@@ -41,7 +41,20 @@ app.use('/gardens', gardensRoute);
 
 app.use('/register', userRegistration);
 
-
+//error handler
+/**
+ * Not working properly
+ */
+app.use((err, req, res, next) => {
+    if(err.name == 'ValidationError') {
+        var valErrors = [];
+        //return all keys inside the error object, push errors to the array
+        Object.keys(err.errors).forEach(key => {
+            valErrors.push(err.errors[key].message)
+        });
+        res.status(422).send(valErrors)
+    }
+})
 
 
 
@@ -62,6 +75,8 @@ mongoose.connect(uri, {
 }).then(() => {
     console.log('mongodb connected...');
 });
+
+
 
 
 

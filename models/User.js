@@ -10,6 +10,10 @@ const UserSchema = mongoose.Schema({
         required: 'Name can\'t be empty',
         minlength: [4, 'Name must be at least 3 characters long']
     },
+    zone: {
+        type: String,
+        required: 'Zone can\'t be empty'
+    },
     email: {
         type: String,
         required: 'Eamil can\'t be empty',

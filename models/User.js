@@ -36,6 +36,10 @@ UserSchema.path('email').validate((val) => {
     return emailRegex.test(val);
 }, 'Invalid email.')
 
+
+/***
+ * encrypt password
+ */
 //events
 //invoked before the save function
 UserSchema.pre('save', function(next) {

@@ -74,6 +74,10 @@ router.get('/', async (req,res) => {
     }
 });
 
+//authenticate
+router.post('/authenticate', (req, res) => {
+    res.status(200).json({"statusCode" : 200 ,"message" : "hello"});
+});
 
 //export routes
 module.exports = router;
